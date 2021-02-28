@@ -1,0 +1,55 @@
+// Decompiled by Jad v1.5.8g. Copyright 2001 Pavel Kouznetsov.
+// Jad home page: http://www.kpdus.com/jad.html
+// Decompiler options: packimports(3) 
+// Source File Name:   SingletonRegistryEnum.java
+
+package com.msr.study.patterns.creational.singleton;
+
+import java.io.Serializable;
+
+public final class SingletonRegistryEnum extends Enum
+    implements Serializable
+{
+
+    public static SingletonRegistryEnum[] values()
+    {
+        return (SingletonRegistryEnum[])$VALUES.clone();
+    }
+
+    public static SingletonRegistryEnum valueOf(String name)
+    {
+        return (SingletonRegistryEnum)Enum.valueOf(com/msr/study/patterns/creational/singleton/SingletonRegistryEnum, name);
+    }
+
+    private SingletonRegistryEnum(String s, int i)
+    {
+        super(s, i);
+    }
+
+    public static SingletonRegistryEnum getInstance()
+    {
+        return INSTANCE;
+    }
+
+    public Object getData()
+    {
+        return data;
+    }
+
+    public void setData(Object data)
+    {
+        this.data = data;
+    }
+
+    public static final SingletonRegistryEnum INSTANCE;
+    private Object data;
+    private static final SingletonRegistryEnum $VALUES[];
+
+    static 
+    {
+        INSTANCE = new SingletonRegistryEnum("INSTANCE", 0);
+        $VALUES = (new SingletonRegistryEnum[] {
+            INSTANCE
+        });
+    }
+}
